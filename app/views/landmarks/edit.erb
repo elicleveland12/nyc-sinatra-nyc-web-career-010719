@@ -4,3 +4,10 @@
 
 <a class="button" href="/figures">Landmarks</a>
 <a class="button" href="/">Home</a>
+
+<form action="/landmarks/<%=@landmark.id %>" method="post">
+  <input type="hidden" name="_method" value="patch">
+  <p>Landmark Name: <input type="text" name="landmark[name]" value="<%= @landmark.name %>"></p>
+  <p>Year Completed: <input type="text" name="landmark[year_completed]" value="<%= @landmark.year_completed %>"></p>
+  <input type="submit" value="Update">
+</form>
