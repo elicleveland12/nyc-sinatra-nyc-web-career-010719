@@ -1,17 +1,17 @@
 <h1>Figures Form</h1>
 
-<form action="/figures/:id" method="post">
-  <p>Name: <input type="text" id="figure_name" name="figure[name]"></p>
+<form action="/figures" method="post">
+  <p>Name: <input type="text" id="figure_name" name="name"></p>
 
   <p> Please check a box below if existing title:</p>
   <% Title.all.each do |title| %>
-    <input id="<%= title.name %>" type="checkbox" name="figure[title_ids][]" value="<%= title.id %>"> <%= title.name %><br>
+    <input id="<%= title.name %>" type="checkbox" name="title_ids[]" value="<%= title.id %>"> <%= title.name %><br>
   <% end %>
   Create New Title: <br><input type="text" name="title[name]">
 
   <p>Please check a landmark below:</p>
   <% Landmark.all.each do |landmark| %>
-    <input id="<%= landmark.name %>" type="checkbox" name="figure[landmark_ids][]" value="<%= landmark.id %>"> <%= landmark.name %><br>
+    <input id="<%= landmark.name %>" type="checkbox" name="landmark_ids[]" value="<%= landmark.id %>"> <%= landmark.name %><br>
   <% end %>
   <p>or create a new landmark:</p>
   <p>Name: <input type="text" name="landmark[name]">
